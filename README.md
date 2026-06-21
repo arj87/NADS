@@ -10,16 +10,16 @@ NADS ingests raw CICIDS2017 packet-flow CSVs (8 days of labeled benign/attack tr
 
 The dataset spans 14 traffic classes: **BENIGN**, **DoS Hulk**, **DoS GoldenEye**, **DoS Slowhttptest**, **DoS slowloris**, **DDoS**, **PortScan**, **Bot**, **FTP-Patator**, **SSH-Patator**, **Web Attack (Brute Force / XSS / SQL Injection)**, **Infiltration**, and **Heartbleed**.
 
-Stage,Description,Output
-1. Preprocessing,"Clean, merge, and encode 8 raw CICIDS2017 CSVs",all_data.csv
-2. Class Distribution,Analyze benign/attack class balance,Distribution stats
-3. Per-Attack Filtering,Split into 14 attack-specific CSVs,attacks/*.csv
-4. Feature Selection,Rank flow features via RandomForestRegressor importance,Feature importance lists
-5. Classical ML Benchmark,Benchmark 7 algorithms with 10-fold splits,results_Final.csv
-6. Per-Attack Random Forest,Dedicated RF classifier per attack category,*_model.pkl
-7. RF + MLP Voting Ensemble,Soft-voting ensemble per attack category,*_voting_model.pkl
-8. CNN-LSTM Sequence Model,Sliding-window temporal classifier across all classes,final_cnn_lstm_model.h5
-
+| Stage | Description | Output |
+|---|---|---|
+| 1. Preprocessing | Clean, merge, and encode 8 raw CICIDS2017 CSVs | `all_data.csv` |
+| 2. Class Distribution | Analyze benign/attack class balance | Distribution stats |
+| 3. Per-Attack Filtering | Split into 14 attack-specific CSVs | `attacks/*.csv` |
+| 4. Feature Selection | Rank flow features via RandomForestRegressor importance | Feature importance lists |
+| 5. Classical ML Benchmark | Benchmark 7 algorithms with 10-fold splits | `results_Final.csv` |
+| 6. Per-Attack Random Forest | Dedicated RF classifier per attack category | `*_model.pkl` |
+| 7. RF + MLP Voting Ensemble | Soft-voting ensemble per attack category | `*_voting_model.pkl` |
+| 8. CNN-LSTM Sequence Model | Sliding-window temporal classifier across all classes | `final_cnn_lstm_model.h5` |
 ---
 
 ## Pipeline
