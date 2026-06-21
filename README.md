@@ -20,6 +20,7 @@ The dataset spans 14 traffic classes: **BENIGN**, **DoS Hulk**, **DoS GoldenEye*
 | 6. Per-Attack Random Forest | Dedicated RF classifier per attack category | `*_model.pkl` |
 | 7. RF + MLP Voting Ensemble | Soft-voting ensemble per attack category | `*_voting_model.pkl` |
 | 8. CNN-LSTM Sequence Model | Sliding-window temporal classifier across all classes | `final_cnn_lstm_model.h5` |
+
 ---
 
 ## Pipeline
