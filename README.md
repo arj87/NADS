@@ -55,15 +55,15 @@ Benchmarks Naive Bayes, QDA, MLP, Random Forest, ID3 (Decision Tree), AdaBoost, 
 
 Nearest Neighbors and AdaBoost led the binary classification benchmark; Naive Bayes and QDA — the two algorithms assuming feature independence/Gaussian distributions — trailed, unsurprising given how correlated flow-level features tend to be.
 
-### 6. Per-Attack Random Forest Models *(own work)*
+### 6. Per-Attack Random Forest Models 
 A dedicated `RandomForestClassifier` trained per attack category using that attack's top-5 importance-ranked features, saved individually (`<Attack>_model.pkl`).
 
 <img src="assets/per_attack_rf_performance.png" width="550" alt="Per-attack Random Forest F1 scores">
 
-### 7. RF + MLP Voting Ensemble *(own work)*
+### 7. RF + MLP Voting Ensemble 
 For each attack category, a soft-voting ensemble combining the Random Forest with an MLPClassifier, aimed at improving robustness on attack types where the two model families disagree (saved as `<Attack>_voting_model.pkl`).
 
-### 8. CNN-LSTM Sequence Model *(own work)*
+### 8. CNN-LSTM Sequence Model 
 Reframes detection as a sequence problem: 17 flow features are standardized and grouped into sliding windows of 10 consecutive flows, then passed through a `Conv1D → BatchNorm → SpatialDropout → LSTM(128) → LSTM(64) → Dense` stack trained for multi-class classification (14 classes).
 
 **Results (5 epochs, 300K-row stratified sample, 80/20 split):**
