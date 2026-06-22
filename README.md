@@ -1,4 +1,4 @@
-# NADS — Network Anomaly Detection System
+# NADS — Network Anomaly Detection 
 
 A machine learning pipeline for detecting and classifying network intrusions from flow-level traffic data, built on the CICIDS2017 dataset. NADS combines a feature-engineered classical ML pipeline with per-attack-type ensemble models and a CNN-LSTM sequence model for temporal flow analysis.
 
